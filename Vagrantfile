@@ -2,11 +2,19 @@
 # vi: set ft=ruby :
 
 $shell = <<-SHELL
+  echo "install docker"
   sudo yum update -y
   sudo yum install -y gcc docker
   sudo chkconfig docker on
   sudo service docker start
+
+  echo "install docker-compose"
+  sudo bash -c "curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /user/bin/docker-compose"
+  sudo chmod +x /user/bin/docker-compose
+
+  echo "pull docker images"
   sudo docker pull centos:centos7
+  sudo docker pull redis:3
 SHELL
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
