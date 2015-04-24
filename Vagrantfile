@@ -9,8 +9,8 @@ $shell = <<-SHELL
   sudo service docker start
 
   echo "install docker-compose"
-  sudo bash -c "curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /user/bin/docker-compose"
-  sudo chmod +x /user/bin/docker-compose
+  sudo bash -c "curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /usr/bin/docker-compose"
+  sudo chmod +x /usr/bin/docker-compose
 
   echo "pull docker images"
   sudo docker pull centos:centos7
